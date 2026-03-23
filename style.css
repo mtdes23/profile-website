@@ -1,14 +1,14 @@
 :root {
-    /* Thiết lập màu sắc hệ thống: Apple style (Sáng) */
+    /* Thiết lập màu sắc hệ thống: Apple style (Sáng) - Sáng và rực rỡ hơn */
     --macos-bg: #f5f5f7;
-    --card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 100%);
-    --card-border: rgba(255, 255, 255, 0.2);
-    --card-border-top: rgba(255, 255, 255, 0.6);
+    --card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.1) 100%);
+    --card-border: rgba(255, 255, 255, 0.3);
+    --card-border-top: rgba(255, 255, 255, 0.7);
     --text-primary: #1d1d1f;
     --text-secondary: #86868b;
-    --link-bg: rgba(255, 255, 255, 0.75);
-    --link-hover: rgba(255, 255, 255, 0.95);
-    --border-color: rgba(255, 255, 255, 0.6);
+    --link-bg: rgba(255, 255, 255, 0.85);
+    --link-hover: rgba(255, 255, 255, 1);
+    --border-color: rgba(255, 255, 255, 0.7);
     --accent: #0071e3;
     
     /* Box Shadows (Bóng cực nhẹ tinh tế) */
@@ -22,21 +22,21 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Thiết lập màu sắc hệ thống: Apple style (Tối) */
+        /* Thiết lập màu sắc hệ thống: Apple style (Tối) - Các nút bấm sáng rực rỡ hơn nhiều */
         --macos-bg: #000000;
-        --card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
-        --card-border: rgba(255, 255, 255, 0.05);
-        --card-border-top: rgba(255, 255, 255, 0.2);
-        --text-primary: #f5f5f7;
-        --text-secondary: #a1a1a6;
-        --link-bg: rgba(255, 255, 255, 0.15); /* Dùng màu trắng mờ thay vì xám để nút sáng lên */
-        --link-hover: rgba(255, 255, 255, 0.3);
-        --border-color: rgba(255, 255, 255, 0.15);
+        --card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+        --card-border: rgba(255, 255, 255, 0.15);
+        --card-border-top: rgba(255, 255, 255, 0.3);
+        --text-primary: #ffffff;
+        --text-secondary: #e0e0e5;
+        --link-bg: rgba(255, 255, 255, 0.25); /* Dùng màu trắng mờ dầy hơn để nút sáng rực lên */
+        --link-hover: rgba(255, 255, 255, 0.45);
+        --border-color: rgba(255, 255, 255, 0.3);
         --accent: #2997ff;
         
-        --shadow-sm: inset 0 1.5px 1px rgba(255, 255, 255, 0.1), 0 4px 12px rgba(0, 0, 0, 0.15);
-        --shadow-md: inset 0 1.5px 1px rgba(255, 255, 255, 0.15), 0 12px 30px rgba(0, 0, 0, 0.25);
-        --shadow-hover: inset 0 1.5px 1px rgba(255, 255, 255, 0.25), 0 16px 40px rgba(0, 0, 0, 0.35);
+        --shadow-sm: inset 0 1.5px 1px rgba(255, 255, 255, 0.15), 0 4px 12px rgba(0, 0, 0, 0.15);
+        --shadow-md: inset 0 1.5px 1px rgba(255, 255, 255, 0.2), 0 12px 30px rgba(0, 0, 0, 0.25);
+        --shadow-hover: inset 0 1.5px 1px rgba(255, 255, 255, 0.3), 0 16px 40px rgba(0, 0, 0, 0.35);
     }
 }
 
@@ -62,7 +62,7 @@ body {
     transition: background-color 0.4s ease;
 }
 
-/* Premium Animated Dark Mesh Background */
+/* Premium Animated Mesh Background - Apple Style */
 .bg-container {
     position: fixed;
     top: 0;
@@ -71,7 +71,7 @@ body {
     height: 100vh;
     z-index: -2;
     overflow: hidden;
-    background-color: #06060c; /* Nền tối tăm, hơi xanh tím */
+    background-color: #f5f5f7; /* Chuẩn Apple Light Mode */
 }
 
 .dark-mesh {
@@ -81,11 +81,11 @@ body {
     top: -50vh;
     left: -50vw;
     background: 
-        radial-gradient(circle at 30% 30%, rgba(25, 10, 80, 0.9), transparent 50%),
-        radial-gradient(circle at 70% 20%, rgba(10, 50, 110, 0.8), transparent 50%),
-        radial-gradient(circle at 50% 80%, rgba(70, 10, 50, 0.8), transparent 50%),
-        radial-gradient(circle at 10% 70%, rgba(0, 30, 90, 0.9), transparent 60%);
-    filter: blur(120px) saturate(150%);
+        radial-gradient(circle at 15% 50%, rgba(255, 100, 200, 0.6), transparent 50%), /* Pink */
+        radial-gradient(circle at 85% 30%, rgba(100, 150, 255, 0.6), transparent 50%), /* Sky Blue */
+        radial-gradient(circle at 50% 80%, rgba(255, 180, 100, 0.5), transparent 50%), /* Peach */
+        radial-gradient(circle at 20% 90%, rgba(150, 255, 200, 0.4), transparent 50%); /* Mint */
+    filter: blur(100px) saturate(140%);
     animation: flowMesh 25s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
 }
 
@@ -104,7 +104,7 @@ body {
     height: 100vh;
     z-index: -1;
     pointer-events: none;
-    opacity: 0.08; /* Rõ hơn một chút do nền tối */
+    opacity: 0.12; 
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
@@ -113,10 +113,16 @@ body {
         background-color: #000000;
     }
     .dark-mesh {
-        opacity: 0.8;
+        background: 
+            radial-gradient(circle at 15% 50%, rgba(70, 10, 180, 0.8), transparent 50%), /* Deep Purple */
+            radial-gradient(circle at 85% 30%, rgba(10, 80, 210, 0.85), transparent 50%), /* Electric Blue */
+            radial-gradient(circle at 50% 80%, rgba(180, 20, 90, 0.75), transparent 50%), /* Magenta */
+            radial-gradient(circle at 20% 90%, rgba(0, 160, 210, 0.8), transparent 50%); /* Cyan */
+        opacity: 0.95;
+        filter: blur(120px) saturate(160%);
     }
     .bg-noise {
-        opacity: 0.12;
+        opacity: 0.16;
     }
 }
 
@@ -130,8 +136,8 @@ body {
 
 .profile-card {
     background: var(--card-bg);
+    -webkit-backdrop-filter: var(--blur); /* Fixed property order */
     backdrop-filter: var(--blur);
-    -webkit-backdrop-filter: var(--blur);
     border: 1px solid var(--card-border);
     border-top: 1px solid var(--card-border-top);
     border-radius: 44px; /* Bo cong nhiều hơn chuẩn thẻ Liquid Glass của Apple */
@@ -157,7 +163,7 @@ body {
     left: -100%;
     width: 60%;
     height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
     transform: skewX(-25deg);
     animation: lightSweep 6s infinite cubic-bezier(0.25, 0.8, 0.25, 1);
     pointer-events: none;
@@ -172,7 +178,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
     .profile-card::before {
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
     }
 }
 
@@ -198,7 +204,7 @@ body {
     margin: 0 auto 1.25rem;
     border-radius: 50%;
     padding: 4px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.05));
+    background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.1));
     box-shadow: var(--shadow-sm);
     position: relative;
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -206,7 +212,7 @@ body {
 
 .avatar-container:hover {
     transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 1);
 }
 
 #avatar {
@@ -232,7 +238,7 @@ body {
 .handle {
     font-size: 1.05rem;
     color: var(--text-primary);
-    opacity: 0.85;
+    opacity: 0.9;
     font-weight: 500;
 }
 
@@ -266,8 +272,9 @@ body {
 
 .link-item ion-icon {
     font-size: 1.25rem;
-    color: var(--text-secondary);
-    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s ease;
+    color: var(--text-primary);
+    opacity: 0.8;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
 }
 
 .link-item:hover {
@@ -278,7 +285,7 @@ body {
 
 .link-item:hover ion-icon {
     transform: translateX(6px) scale(1.15);
-    color: var(--text-primary);
+    opacity: 1;
 }
 
 .link-item:active {
@@ -314,7 +321,7 @@ body {
 
 .social-icons a:hover {
     background: var(--link-hover);
-    color: var(--accent);
+    color: var(--text-primary);
     transform: translateY(-4px) rotate(8deg);
     box-shadow: var(--shadow-hover);
 }
