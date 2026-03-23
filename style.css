@@ -1,43 +1,23 @@
 :root {
-    /* Thiết lập màu sắc hệ thống: Apple style (Sáng) - Sáng và rực rỡ hơn */
-    --macos-bg: #f5f5f7;
-    --card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.1) 100%);
-    --card-border: rgba(255, 255, 255, 0.3);
-    --card-border-top: rgba(255, 255, 255, 0.7);
-    --text-primary: #1d1d1f;
-    --text-secondary: #86868b;
-    --link-bg: rgba(255, 255, 255, 0.85);
-    --link-hover: rgba(255, 255, 255, 1);
-    --border-color: rgba(255, 255, 255, 0.7);
-    --accent: #0071e3;
+    /* Thiết lập màu sắc hệ thống: Apple style (Tối mặc định) */
+    --macos-bg: #000000;
+    --card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --card-border: rgba(255, 255, 255, 0.15);
+    --card-border-top: rgba(255, 255, 255, 0.3);
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e5;
+    --link-bg: rgba(255, 255, 255, 0.25);
+    --link-hover: rgba(255, 255, 255, 0.45);
+    --border-color: rgba(255, 255, 255, 0.3);
+    --accent: #2997ff;
     
     /* Box Shadows (Bóng cực nhẹ tinh tế) */
-    --shadow-sm: inset 0 1px 1.5px rgba(255, 255, 255, 0.6), 0 2px 8px rgba(0, 0, 0, 0.03);
-    --shadow-md: inset 0 1px 1.5px rgba(255, 255, 255, 0.6), 0 12px 30px rgba(0, 0, 0, 0.05); 
-    --shadow-hover: inset 0 1px 1.5px rgba(255, 255, 255, 0.8), 0 16px 40px rgba(0, 0, 0, 0.08);
+    --shadow-sm: inset 0 1.5px 1px rgba(255, 255, 255, 0.15), 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-md: inset 0 1.5px 1px rgba(255, 255, 255, 0.2), 0 12px 30px rgba(0, 0, 0, 0.25);
+    --shadow-hover: inset 0 1.5px 1px rgba(255, 255, 255, 0.3), 0 16px 40px rgba(0, 0, 0, 0.35);
     
     --blur: saturate(200%) blur(50px);
     --font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* Thiết lập màu sắc hệ thống: Apple style (Tối) - Các nút bấm sáng rực rỡ hơn nhiều */
-        --macos-bg: #000000;
-        --card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-        --card-border: rgba(255, 255, 255, 0.15);
-        --card-border-top: rgba(255, 255, 255, 0.3);
-        --text-primary: #ffffff;
-        --text-secondary: #e0e0e5;
-        --link-bg: rgba(255, 255, 255, 0.25); /* Dùng màu trắng mờ dầy hơn để nút sáng rực lên */
-        --link-hover: rgba(255, 255, 255, 0.45);
-        --border-color: rgba(255, 255, 255, 0.3);
-        --accent: #2997ff;
-        
-        --shadow-sm: inset 0 1.5px 1px rgba(255, 255, 255, 0.15), 0 4px 12px rgba(0, 0, 0, 0.15);
-        --shadow-md: inset 0 1.5px 1px rgba(255, 255, 255, 0.2), 0 12px 30px rgba(0, 0, 0, 0.25);
-        --shadow-hover: inset 0 1.5px 1px rgba(255, 255, 255, 0.3), 0 16px 40px rgba(0, 0, 0, 0.35);
-    }
 }
 
 * {
@@ -62,7 +42,7 @@ body {
     transition: background-color 0.4s ease;
 }
 
-/* Premium Animated Mesh Background - Apple Style */
+/* Premium Image Background */
 .bg-container {
     position: fixed;
     top: 0;
@@ -71,22 +51,15 @@ body {
     height: 100vh;
     z-index: -2;
     overflow: hidden;
-    background-color: #f5f5f7; /* Chuẩn Apple Light Mode */
+    background-color: #000000; /* Fallback black */
+    background-image: url('bg-mtdes23.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .dark-mesh {
-    width: 200vw;
-    height: 200vh;
-    position: absolute;
-    top: -50vh;
-    left: -50vw;
-    background: 
-        radial-gradient(circle at 15% 50%, rgba(255, 100, 200, 0.6), transparent 50%), /* Pink */
-        radial-gradient(circle at 85% 30%, rgba(100, 150, 255, 0.6), transparent 50%), /* Sky Blue */
-        radial-gradient(circle at 50% 80%, rgba(255, 180, 100, 0.5), transparent 50%), /* Peach */
-        radial-gradient(circle at 20% 90%, rgba(150, 255, 200, 0.4), transparent 50%); /* Mint */
-    filter: blur(100px) saturate(140%);
-    animation: flowMesh 25s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+    display: none;
 }
 
 @keyframes flowMesh {
@@ -95,35 +68,9 @@ body {
     100% { transform: rotate(-10deg) scale(0.9) translate(-5%, 5%); }
 }
 
-/* Lớp nhiễu hạt (Noise) mỏng tạo chất liệu kính/màn ảnh cao cấp */
+/* Hides noise so image logo stays crisp */
 .bg-noise {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0.12; 
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-@media (prefers-color-scheme: dark) {
-    .bg-container {
-        background-color: #000000;
-    }
-    .dark-mesh {
-        background: 
-            radial-gradient(circle at 15% 50%, rgba(70, 10, 180, 0.8), transparent 50%), /* Deep Purple */
-            radial-gradient(circle at 85% 30%, rgba(10, 80, 210, 0.85), transparent 50%), /* Electric Blue */
-            radial-gradient(circle at 50% 80%, rgba(180, 20, 90, 0.75), transparent 50%), /* Magenta */
-            radial-gradient(circle at 20% 90%, rgba(0, 160, 210, 0.8), transparent 50%); /* Cyan */
-        opacity: 0.95;
-        filter: blur(120px) saturate(160%);
-    }
-    .bg-noise {
-        opacity: 0.16;
-    }
+    display: none;
 }
 
 #app {
@@ -140,7 +87,7 @@ body {
     backdrop-filter: var(--blur);
     border: 1px solid var(--card-border);
     border-top: 1px solid var(--card-border-top);
-    border-radius: 44px; /* Bo cong nhiều hơn chuẩn thẻ Liquid Glass của Apple */
+    border-radius: 44px; /* Bo cong chuẩn Liquid Glass */
     padding: 3.5rem 2.5rem 3rem;
     box-shadow: var(--shadow-md);
     display: flex;
@@ -163,7 +110,7 @@ body {
     left: -100%;
     width: 60%;
     height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
     transform: skewX(-25deg);
     animation: lightSweep 6s infinite cubic-bezier(0.25, 0.8, 0.25, 1);
     pointer-events: none;
@@ -174,12 +121,6 @@ body {
     0% { left: -100%; }
     15% { left: 200%; }
     100% { left: 200%; }
-}
-
-@media (prefers-color-scheme: dark) {
-    .profile-card::before {
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
-    }
 }
 
 @keyframes fadeInUp {
