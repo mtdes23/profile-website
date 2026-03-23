@@ -42,7 +42,7 @@ body {
     transition: background-color 0.4s ease;
 }
 
-/* Premium Image Background */
+/* Premium Background Layer */
 .bg-container {
     position: fixed;
     top: 0;
@@ -52,10 +52,21 @@ body {
     z-index: -2;
     overflow: hidden;
     background-color: #000000; /* Fallback black */
-    background-image: url('bg-mtdes23.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none; /* Make unclickable */
+    border: none;
 }
 
 .dark-mesh {
